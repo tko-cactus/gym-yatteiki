@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1332F3662C21DFDE0017B00D /* gym_yatteikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */; };
+		1332F3682C21DFDE0017B00D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3672C21DFDE0017B00D /* ContentView.swift */; };
+		1332F36A2C21DFDE0017B00D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3692C21DFDE0017B00D /* Item.swift */; };
+		1332F36C2C21DFDF0017B00D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1332F36B2C21DFDF0017B00D /* Assets.xcassets */; };
+		1332F36F2C21DFDF0017B00D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1332F36E2C21DFDF0017B00D /* Preview Assets.xcassets */; };
+		1332F3792C21DFDF0017B00D /* gym_yatteikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3782C21DFDF0017B00D /* gym_yatteikiTests.swift */; };
+		1332F3832C21DFDF0017B00D /* gym_yatteikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3822C21DFDF0017B00D /* gym_yatteikiUITests.swift */; };
+		1332F3852C21DFDF0017B00D /* gym_yatteikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3842C21DFDF0017B00D /* gym_yatteikiUITestsLaunchTests.swift */; };
+		133A35F62C21E489003FFFFA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A35F52C21E489003FFFFA /* TimerView.swift */; };
+		133A35F82C21EC45003FFFFA /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A35F72C21EC45003FFFFA /* TimerListView.swift */; };
+		133A35FB2C259730003FFFFA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A35FA2C259730003FFFFA /* Menu.swift */; };
+		133A35FF2C25A4F4003FFFFA /* MenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A35FE2C25A4F4003FFFFA /* MenuType.swift */; };
+		133A36012C25AED7003FFFFA /* LoadByMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A36002C25AED7003FFFFA /* LoadByMenu.swift */; };
+		133A36062C26FAF9003FFFFA /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A36052C26FAF9003FFFFA /* GraphView.swift */; };
+		133A360E2C303F9E003FFFFA /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A360D2C303F9E003FFFFA /* DrawerView.swift */; };
+		136C00832C43F0E400E9E95C /* LoadByMenuModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */; };
+		138452652C48055200D7A1FE /* ModelContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138452642C48055200D7A1FE /* ModelContextExtension.swift */; };
+		13A57D442C46AF8200FCFC0C /* SampleLoadByMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A57D432C46AF8200FCFC0C /* SampleLoadByMenu.swift */; };
+		13A57D462C46B77E00FCFC0C /* BottomDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A57D452C46B77E00FCFC0C /* BottomDrawer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1332F3752C21DFDF0017B00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1332F35A2C21DFDE0017B00D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1332F3612C21DFDE0017B00D;
+			remoteInfo = "gym-yatteiki";
+		};
+		1332F37F2C21DFDF0017B00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1332F35A2C21DFDE0017B00D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1332F3612C21DFDE0017B00D;
+			remoteInfo = "gym-yatteiki";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1332F3622C21DFDE0017B00D /* gym-yatteiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gym-yatteiki.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym_yatteikiApp.swift; sourceTree = "<group>"; };
+		1332F3672C21DFDE0017B00D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1332F3692C21DFDE0017B00D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1332F36B2C21DFDF0017B00D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1332F36E2C21DFDF0017B00D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1332F3742C21DFDF0017B00D /* gym-yatteikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gym-yatteikiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1332F3782C21DFDF0017B00D /* gym_yatteikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym_yatteikiTests.swift; sourceTree = "<group>"; };
+		1332F37E2C21DFDF0017B00D /* gym-yatteikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gym-yatteikiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1332F3822C21DFDF0017B00D /* gym_yatteikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym_yatteikiUITests.swift; sourceTree = "<group>"; };
+		1332F3842C21DFDF0017B00D /* gym_yatteikiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym_yatteikiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		133A35F52C21E489003FFFFA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		133A35F72C21EC45003FFFFA /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
+		133A35FA2C259730003FFFFA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		133A35FE2C25A4F4003FFFFA /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
+		133A36002C25AED7003FFFFA /* LoadByMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadByMenu.swift; sourceTree = "<group>"; };
+		133A36052C26FAF9003FFFFA /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		133A360D2C303F9E003FFFFA /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadByMenuModelContainer.swift; sourceTree = "<group>"; };
+		138452642C48055200D7A1FE /* ModelContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContextExtension.swift; sourceTree = "<group>"; };
+		13A57D432C46AF8200FCFC0C /* SampleLoadByMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLoadByMenu.swift; sourceTree = "<group>"; };
+		13A57D452C46B77E00FCFC0C /* BottomDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDrawer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1332F35F2C21DFDE0017B00D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F3712C21DFDF0017B00D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F37B2C21DFDF0017B00D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1332F3592C21DFDE0017B00D = {
+			isa = PBXGroup;
+			children = (
+				1332F3642C21DFDE0017B00D /* gym-yatteiki */,
+				1332F3772C21DFDF0017B00D /* gym-yatteikiTests */,
+				1332F3812C21DFDF0017B00D /* gym-yatteikiUITests */,
+				1332F3632C21DFDE0017B00D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1332F3632C21DFDE0017B00D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1332F3622C21DFDE0017B00D /* gym-yatteiki.app */,
+				1332F3742C21DFDF0017B00D /* gym-yatteikiTests.xctest */,
+				1332F37E2C21DFDF0017B00D /* gym-yatteikiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1332F3642C21DFDE0017B00D /* gym-yatteiki */ = {
+			isa = PBXGroup;
+			children = (
+				136C00812C43E05500E9E95C /* adapter */,
+				133A35F92C259708003FFFFA /* model */,
+				1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */,
+				133A35F52C21E489003FFFFA /* TimerView.swift */,
+				138452642C48055200D7A1FE /* ModelContextExtension.swift */,
+				133A35F72C21EC45003FFFFA /* TimerListView.swift */,
+				133A36052C26FAF9003FFFFA /* GraphView.swift */,
+				133A360D2C303F9E003FFFFA /* DrawerView.swift */,
+				13A57D452C46B77E00FCFC0C /* BottomDrawer.swift */,
+				1332F3672C21DFDE0017B00D /* ContentView.swift */,
+				1332F3692C21DFDE0017B00D /* Item.swift */,
+				1332F36B2C21DFDF0017B00D /* Assets.xcassets */,
+				1332F36D2C21DFDF0017B00D /* Preview Content */,
+			);
+			path = "gym-yatteiki";
+			sourceTree = "<group>";
+		};
+		1332F36D2C21DFDF0017B00D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1332F36E2C21DFDF0017B00D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1332F3772C21DFDF0017B00D /* gym-yatteikiTests */ = {
+			isa = PBXGroup;
+			children = (
+				133A36022C26C853003FFFFA /* model */,
+				1332F3782C21DFDF0017B00D /* gym_yatteikiTests.swift */,
+			);
+			path = "gym-yatteikiTests";
+			sourceTree = "<group>";
+		};
+		1332F3812C21DFDF0017B00D /* gym-yatteikiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1332F3822C21DFDF0017B00D /* gym_yatteikiUITests.swift */,
+				1332F3842C21DFDF0017B00D /* gym_yatteikiUITestsLaunchTests.swift */,
+			);
+			path = "gym-yatteikiUITests";
+			sourceTree = "<group>";
+		};
+		133A35F92C259708003FFFFA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				133A35FA2C259730003FFFFA /* Menu.swift */,
+				133A35FE2C25A4F4003FFFFA /* MenuType.swift */,
+				133A36002C25AED7003FFFFA /* LoadByMenu.swift */,
+				13A57D432C46AF8200FCFC0C /* SampleLoadByMenu.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		133A36022C26C853003FFFFA /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		136C00812C43E05500E9E95C /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1332F3612C21DFDE0017B00D /* gym-yatteiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1332F3882C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteiki" */;
+			buildPhases = (
+				1332F35E2C21DFDE0017B00D /* Sources */,
+				1332F35F2C21DFDE0017B00D /* Frameworks */,
+				1332F3602C21DFDE0017B00D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gym-yatteiki";
+			productName = "gym-yatteiki";
+			productReference = 1332F3622C21DFDE0017B00D /* gym-yatteiki.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1332F3732C21DFDF0017B00D /* gym-yatteikiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1332F38B2C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteikiTests" */;
+			buildPhases = (
+				1332F3702C21DFDF0017B00D /* Sources */,
+				1332F3712C21DFDF0017B00D /* Frameworks */,
+				1332F3722C21DFDF0017B00D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1332F3762C21DFDF0017B00D /* PBXTargetDependency */,
+			);
+			name = "gym-yatteikiTests";
+			productName = "gym-yatteikiTests";
+			productReference = 1332F3742C21DFDF0017B00D /* gym-yatteikiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1332F37D2C21DFDF0017B00D /* gym-yatteikiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1332F38E2C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteikiUITests" */;
+			buildPhases = (
+				1332F37A2C21DFDF0017B00D /* Sources */,
+				1332F37B2C21DFDF0017B00D /* Frameworks */,
+				1332F37C2C21DFDF0017B00D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1332F3802C21DFDF0017B00D /* PBXTargetDependency */,
+			);
+			name = "gym-yatteikiUITests";
+			productName = "gym-yatteikiUITests";
+			productReference = 1332F37E2C21DFDF0017B00D /* gym-yatteikiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1332F35A2C21DFDE0017B00D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					1332F3612C21DFDE0017B00D = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					1332F3732C21DFDF0017B00D = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 1332F3612C21DFDE0017B00D;
+					};
+					1332F37D2C21DFDF0017B00D = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 1332F3612C21DFDE0017B00D;
+					};
+				};
+			};
+			buildConfigurationList = 1332F35D2C21DFDE0017B00D /* Build configuration list for PBXProject "gym-yatteiki" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1332F3592C21DFDE0017B00D;
+			productRefGroup = 1332F3632C21DFDE0017B00D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1332F3612C21DFDE0017B00D /* gym-yatteiki */,
+				1332F3732C21DFDF0017B00D /* gym-yatteikiTests */,
+				1332F37D2C21DFDF0017B00D /* gym-yatteikiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1332F3602C21DFDE0017B00D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1332F36F2C21DFDF0017B00D /* Preview Assets.xcassets in Resources */,
+				1332F36C2C21DFDF0017B00D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F3722C21DFDF0017B00D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F37C2C21DFDF0017B00D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1332F35E2C21DFDE0017B00D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133A35FF2C25A4F4003FFFFA /* MenuType.swift in Sources */,
+				138452652C48055200D7A1FE /* ModelContextExtension.swift in Sources */,
+				136C00832C43F0E400E9E95C /* LoadByMenuModelContainer.swift in Sources */,
+				133A35FB2C259730003FFFFA /* Menu.swift in Sources */,
+				13A57D442C46AF8200FCFC0C /* SampleLoadByMenu.swift in Sources */,
+				1332F3682C21DFDE0017B00D /* ContentView.swift in Sources */,
+				1332F36A2C21DFDE0017B00D /* Item.swift in Sources */,
+				133A36062C26FAF9003FFFFA /* GraphView.swift in Sources */,
+				133A360E2C303F9E003FFFFA /* DrawerView.swift in Sources */,
+				133A35F62C21E489003FFFFA /* TimerView.swift in Sources */,
+				1332F3662C21DFDE0017B00D /* gym_yatteikiApp.swift in Sources */,
+				133A36012C25AED7003FFFFA /* LoadByMenu.swift in Sources */,
+				13A57D462C46B77E00FCFC0C /* BottomDrawer.swift in Sources */,
+				133A35F82C21EC45003FFFFA /* TimerListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F3702C21DFDF0017B00D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1332F3792C21DFDF0017B00D /* gym_yatteikiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1332F37A2C21DFDF0017B00D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1332F3852C21DFDF0017B00D /* gym_yatteikiUITestsLaunchTests.swift in Sources */,
+				1332F3832C21DFDF0017B00D /* gym_yatteikiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1332F3762C21DFDF0017B00D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1332F3612C21DFDE0017B00D /* gym-yatteiki */;
+			targetProxy = 1332F3752C21DFDF0017B00D /* PBXContainerItemProxy */;
+		};
+		1332F3802C21DFDF0017B00D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1332F3612C21DFDE0017B00D /* gym-yatteiki */;
+			targetProxy = 1332F37F2C21DFDF0017B00D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1332F3862C21DFDF0017B00D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1332F3872C21DFDF0017B00D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1332F3892C21DFDF0017B00D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gym-yatteiki/Preview Content\"";
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteiki";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1332F38A2C21DFDF0017B00D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gym-yatteiki/Preview Content\"";
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteiki";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1332F38C2C21DFDF0017B00D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteikiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gym-yatteiki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gym-yatteiki";
+			};
+			name = Debug;
+		};
+		1332F38D2C21DFDF0017B00D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteikiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gym-yatteiki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gym-yatteiki";
+			};
+			name = Release;
+		};
+		1332F38F2C21DFDF0017B00D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteikiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "gym-yatteiki";
+			};
+			name = Debug;
+		};
+		1332F3902C21DFDF0017B00D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22AMQ6VD92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.guch.gym-yatteikiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "gym-yatteiki";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1332F35D2C21DFDE0017B00D /* Build configuration list for PBXProject "gym-yatteiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1332F3862C21DFDF0017B00D /* Debug */,
+				1332F3872C21DFDF0017B00D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1332F3882C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1332F3892C21DFDF0017B00D /* Debug */,
+				1332F38A2C21DFDF0017B00D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1332F38B2C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteikiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1332F38C2C21DFDF0017B00D /* Debug */,
+				1332F38D2C21DFDF0017B00D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1332F38E2C21DFDF0017B00D /* Build configuration list for PBXNativeTarget "gym-yatteikiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1332F38F2C21DFDF0017B00D /* Debug */,
+				1332F3902C21DFDF0017B00D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1332F35A2C21DFDE0017B00D /* Project object */;
+}

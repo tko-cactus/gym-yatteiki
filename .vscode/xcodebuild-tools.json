@@ -1,0 +1,19 @@
+{
+  "variables": {
+      "SDK_VERSION": "17.5"
+  },
+  "sdk": "iphonesimulator${SDK_VERSION}",
+  "workspace": "/Users/yamaguchitokio/xcodeprojects/gym-yatteiki",
+  "scheme": "スキームの名前",
+  "debugConfigurations": [
+      {
+          "name": "Simulator",
+          "cwd": "${buildPath}",
+          "program": "ios-sim",
+          "args": [
+              "launch", "gym-yatteiki.app/",
+              "--devicetypeid",  "com.apple.CoreSimulator.SimDeviceType.iPhone-14, ${SDK_VERSION}"
+          ]
+      }        
+  ]
+}

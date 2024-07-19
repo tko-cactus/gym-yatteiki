@@ -1,6 +1,7 @@
 .DS_Store
 
 xcuserdata/
+gym-yatteiki.xcodeproj/xcuserdata/
 
 *.xcscmblueprint
 *.xccheckout

@@ -28,6 +28,15 @@ struct TimerListView: View {
                                 }
                                 Spacer()
                             }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button {
+                                    print("delete button taped")
+                                    modelContext.delete(recent)
+                                } label: {
+                                    Text("delete")
+                                }
+                            }
+                            .tint(.red)
                         }
                         .listStyle(.automatic)
                         .onLongPressGesture {

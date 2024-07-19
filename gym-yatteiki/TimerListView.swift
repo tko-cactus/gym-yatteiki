@@ -11,6 +11,8 @@ struct TimerListView: View {
     @State private var timer: Timer?
     @State private var timeRemaining: Int = 0
     @State var isPaused: Bool = true
+    @State var newMenuName: String = ""
+    @State var newMenuType: MenuType = .ARM
         
     var body: some View {
         VStack {
@@ -24,7 +26,8 @@ struct TimerListView: View {
                                     Text(restTime)
                                         .font(.largeTitle)
                                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                    Text("メニュー")
+                                        Text(recent.menu.type.rawValue + " - " + recent.menu.name)
+                                            .font(.subheadline)
                                 }
                                 Spacer()
                             }
@@ -60,9 +63,19 @@ struct TimerListView: View {
                             Text("Drawer Content")
                                 .font(.headline)
                                 .padding()
+                            HStack {
+                                Picker("Type", selection: $newMenuType) {
+                                    ForEach(MenuType.allCases, id: \.self) {type in
+                                        Text(type.rawValue).tag(type)
+                                    }
+                                }
+                                .padding()
+                                TextField("Name", text: $newMenuName)
+                                    .textFieldStyle(.roundedBorder)
+                            }
+                            
                             Button(action: {
-                                // TODO 後で新規トレーニングを追加する処理を詰める
-                                let newMenu = Menu(name: "New Menu", type: .ARM)
+                                let newMenu = Menu(name: newMenuName, type: .ARM)
                                 let newLoad = LoadByMenu.create(menu: newMenu)
                                 modelContext.insert(newLoad)
                                 do {

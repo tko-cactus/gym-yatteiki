@@ -3,17 +3,17 @@ import Foundation
 /**
  メニュー種別を表現する列挙型
  */
-enum MenuType: Codable {
-    /** 肩 */
-    case SHOULDER
+enum MenuType: String, Codable, CaseIterable {
+/** 肩 */
+    case SHOULDER = "Shoulder"
     /** 胸 */
-    case CHEST
+    case CHEST = "Chest"
     /** 背中 */
-    case BACK
+    case BACK = "Back"
     /** 脚 */
-    case LEG
+    case LEG = "Leg"
     /** 腕 */
-    case ARM
+    case ARM = "Arm"
     /** コア */
-    case CORE
+    case CORE = "Core"
 }

@@ -75,7 +75,7 @@ struct TimerListView: View {
                             }
                             
                             Button(action: {
-                                let newMenu = Menu(name: newMenuName, type: .ARM)
+                                let newMenu = Menu(name: newMenuName, type: newMenuType)
                                 let newLoad = LoadByMenu.create(menu: newMenu)
                                 modelContext.insert(newLoad)
                                 do {

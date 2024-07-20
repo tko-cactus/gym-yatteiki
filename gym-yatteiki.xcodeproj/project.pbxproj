@@ -24,6 +24,7 @@
 		133A360E2C303F9E003FFFFA /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A360D2C303F9E003FFFFA /* DrawerView.swift */; };
 		136C00832C43F0E400E9E95C /* LoadByMenuModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */; };
 		138452652C48055200D7A1FE /* ModelContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138452642C48055200D7A1FE /* ModelContextExtension.swift */; };
+		138E4FC92C4B640700C2F843 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E4FC82C4B640700C2F843 /* TimePickerView.swift */; };
 		13A57D442C46AF8200FCFC0C /* SampleLoadByMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A57D432C46AF8200FCFC0C /* SampleLoadByMenu.swift */; };
 		13A57D462C46B77E00FCFC0C /* BottomDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A57D452C46B77E00FCFC0C /* BottomDrawer.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		133A360D2C303F9E003FFFFA /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
 		136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadByMenuModelContainer.swift; sourceTree = "<group>"; };
 		138452642C48055200D7A1FE /* ModelContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContextExtension.swift; sourceTree = "<group>"; };
+		138E4FC82C4B640700C2F843 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		13A57D432C46AF8200FCFC0C /* SampleLoadByMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLoadByMenu.swift; sourceTree = "<group>"; };
 		13A57D452C46B77E00FCFC0C /* BottomDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDrawer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				133A35F92C259708003FFFFA /* model */,
 				1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */,
 				133A35F52C21E489003FFFFA /* TimerView.swift */,
+				138E4FC82C4B640700C2F843 /* TimePickerView.swift */,
 				138452642C48055200D7A1FE /* ModelContextExtension.swift */,
 				133A35F72C21EC45003FFFFA /* TimerListView.swift */,
 				133A36052C26FAF9003FFFFA /* GraphView.swift */,
@@ -182,9 +185,17 @@
 		136C00812C43E05500E9E95C /* adapter */ = {
 			isa = PBXGroup;
 			children = (
+				138E4FCA2C4B877A00C2F843 /* view */,
 				136C00822C43F0E400E9E95C /* LoadByMenuModelContainer.swift */,
 			);
 			path = adapter;
+			sourceTree = "<group>";
+		};
+		138E4FCA2C4B877A00C2F843 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 				1332F36A2C21DFDE0017B00D /* Item.swift in Sources */,
 				133A36062C26FAF9003FFFFA /* GraphView.swift in Sources */,
 				133A360E2C303F9E003FFFFA /* DrawerView.swift in Sources */,
+				138E4FC92C4B640700C2F843 /* TimePickerView.swift in Sources */,
 				133A35F62C21E489003FFFFA /* TimerView.swift in Sources */,
 				1332F3662C21DFDE0017B00D /* gym_yatteikiApp.swift in Sources */,
 				133A36012C25AED7003FFFFA /* LoadByMenu.swift in Sources */,

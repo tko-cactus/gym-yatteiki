@@ -30,10 +30,21 @@ class LoadByMenu: Codable, Hashable {
         self.weightPound = weightPound
     }
     
-    /** メニューを指定してインスタンスを作成する */
+    /** MM:SS の形式でresttimeを返却する */
+    public func getRestTime() -> String {
+        let minutes = rest / 60
+        let seconds = rest % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
     
-    public static func create(menu: Menu) -> LoadByMenu {
-        return LoadByMenu(menu: menu, lep: 0, set: 0, rest: 0, weightPound: 0.0)
+    /** 分と秒を秒に変換する */
+    public static func convertToSeconds(minutes: Int, seconds: Int) -> Int {
+        return minutes * 60 + seconds
+    }
+    
+    /** メニューを指定してインスタンスを作成する */
+    public static func create(menu: Menu, rest: Int) -> LoadByMenu {
+        return LoadByMenu(menu: menu, lep: 0, set: 0, rest: rest, weightPound: 0.0)
     }
     
     /** ウェイトの重量をキログラムに変換した値を返す */

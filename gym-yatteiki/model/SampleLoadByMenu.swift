@@ -20,7 +20,7 @@ class SampleLoadByMenu {
             container.mainContext.insert(menu)
             
             for i in 1...3 {
-                let loadByMenu = LoadByMenu.create(menu: menu)
+                let loadByMenu = LoadByMenu.create(menu: menu, rest: 60)
                 container.mainContext.insert(loadByMenu)
             }
             return container

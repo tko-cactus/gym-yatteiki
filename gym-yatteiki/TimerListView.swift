@@ -6,7 +6,7 @@ struct TimerListView: View {
     @Query private var recents: [LoadByMenu]
     @Query private var menus: [Menu]
 
-    @State private var showingDrawer: Bool = true // FIXME
+    @State private var showingDrawer: Bool = false
     @State private var currentTime: String = "00:00"
     @State private var timer: Timer?
     @State private var timeRemaining: Int = 0
@@ -56,54 +56,47 @@ struct TimerListView: View {
                         }) {
                             Image(systemName: "plus").foregroundColor(.blue)
                         }
+                        .sheet(isPresented: $showingDrawer, content: {
+                            VStack {
+                                Text("Drawer Content")
+                                    .font(.headline)
+                                    .padding()
+                                HStack {
+                                    Picker("Type", selection: $newMenuType) {
+                                        ForEach(MenuType.allCases, id: \.self) {type in
+                                            Text(type.rawValue).tag(type)
+                                        }
+                                    }
+                                    .padding()
+                                    TextField("Name", text: $newMenuName)
+                                        .textFieldStyle(.roundedBorder)
+                                }
+                                TimePickerView(
+                                    selectedMinutes: $newRestTimeMinutes,
+                                    selectedSeconds: $newRestTimeSeconds)
+                                Button(action: {
+                                    let newMenu = Menu(name: newMenuName, type: newMenuType)
+                                    let restSeconds = newRestTimeMinutes * 60 + newRestTimeSeconds
+                                    let newLoad = LoadByMenu.create(menu: newMenu, rest: restSeconds)
+                                    modelContext.insert(newLoad)
+                                    do {
+                                        try modelContext.save()
+                                        print("Successfully saved new load: \(newLoad)")
+                                        showingDrawer = false
+                                    } catch {
+                                        print("Error occurred while saving new load: \(error)")
+                                    }
+                                }, label: {
+                                    Text("Add New Load")
+                                })
+                                .padding()
+                            }
+                        })
+                        .ignoresSafeArea()
+                        .presentationDetents([.medium, .large])
+                        .presentationDragIndicator(.visible)
                     }
                 }
-                .overlay(
-                    BottomDrawer(isOpen: $showingDrawer) {
-                        VStack {
-                            Text("Drawer Content")
-                                .font(.headline)
-                                .padding()
-                            HStack {
-                                Picker("Type", selection: $newMenuType) {
-                                    ForEach(MenuType.allCases, id: \.self) {type in
-                                        Text(type.rawValue).tag(type)
-                                    }
-                                }
-                                .padding()
-                                TextField("Name", text: $newMenuName)
-                                    .textFieldStyle(.roundedBorder)
-                            }
-                            TimePickerView(
-                                selectedMinutes: $newRestTimeMinutes,
-                                selectedSeconds: $newRestTimeSeconds)
-                            Button(action: {
-                                let newMenu = Menu(name: newMenuName, type: newMenuType)
-                                let restSeconds = newRestTimeMinutes * 60 + newRestTimeSeconds
-                                let newLoad = LoadByMenu.create(menu: newMenu, rest: restSeconds)
-                                modelContext.insert(newLoad)
-                                do {
-                                    try modelContext.save()
-                                    print("Successfully saved new load: \(newLoad)")
-                                } catch {
-                                    print("Error occurred while saving new load: \(error)")
-                                }
-                            }, label: {
-                                Text("Add New Load")
-                            })
-                            .padding()
-//                            Button("Close") {
-//                                showingDrawer = false
-//                            }
-//                            .padding()
-//                            .background(Color.red)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(8)
-                        }
-                    }
-                )
-            }.task {
-                print(modelContext.sqliteCommand)
             }
         }
     }

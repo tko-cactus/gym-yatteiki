@@ -6,28 +6,29 @@ struct TimerListView: View {
     @Query private var recents: [LoadByMenu]
     @Query private var menus: [Menu]
 
-    @State private var showingDrawer: Bool = false
+    @State private var showingDrawer: Bool = true // FIXME
     @State private var currentTime: String = "00:00"
     @State private var timer: Timer?
     @State private var timeRemaining: Int = 0
     @State var isPaused: Bool = true
     @State var newMenuName: String = ""
     @State var newMenuType: MenuType = .ARM
+    @State var newRestTimeMinutes: Int = 0
+    @State var newRestTimeSeconds: Int = 0
         
     var body: some View {
         VStack {
             NavigationView {
                 VStack {
                     List(recents, id: \.uuid) { recent in
-                        let restTime = Duration.seconds(recent.rest).formatted(.time(pattern: .hourMinuteSecond))
                         NavigationLink(destination: TimerView()) {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text(restTime)
-                                        .font(.largeTitle)
+                                    Text(recent.menu.name)
+                                        .font(.title)
                                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                        Text(recent.menu.type.rawValue + " - " + recent.menu.name)
-                                            .font(.subheadline)
+                                    Text(recent.menu.type.rawValue + " - " + recent.getRestTime())
+                                        .font(.subheadline)
                                 }
                                 Spacer()
                             }
@@ -73,10 +74,13 @@ struct TimerListView: View {
                                 TextField("Name", text: $newMenuName)
                                     .textFieldStyle(.roundedBorder)
                             }
-                            
+                            TimePickerView(
+                                selectedMinutes: $newRestTimeMinutes,
+                                selectedSeconds: $newRestTimeSeconds)
                             Button(action: {
                                 let newMenu = Menu(name: newMenuName, type: newMenuType)
-                                let newLoad = LoadByMenu.create(menu: newMenu)
+                                let restSeconds = newRestTimeMinutes * 60 + newRestTimeSeconds
+                                let newLoad = LoadByMenu.create(menu: newMenu, rest: restSeconds)
                                 modelContext.insert(newLoad)
                                 do {
                                     try modelContext.save()
@@ -87,13 +91,14 @@ struct TimerListView: View {
                             }, label: {
                                 Text("Add New Load")
                             })
-                            Button("Close") {
-                                showingDrawer = false
-                            }
                             .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+//                            Button("Close") {
+//                                showingDrawer = false
+//                            }
+//                            .padding()
+//                            .background(Color.red)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(8)
                         }
                     }
                 )

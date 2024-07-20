@@ -62,3 +62,11 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+struct BottomDrawer_Preview: PreviewProvider {
+    static var previews: some View {
+        BottomDrawer(isOpen: .constant(true)) {
+            Text("Drawer Content")
+        }
+    }
+}

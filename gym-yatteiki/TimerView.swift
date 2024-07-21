@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State private var timeRemaining: Double = 586
+    @Binding var timeRemaining: Double
     @State private var timer: Timer? = nil
     @State private var isPaused: Bool = false
     private let CIRCLE_LINE_WIDTH: CGFloat = 5.0

@@ -30,7 +30,7 @@ struct TimerListView: View {
 
     private var recentsList: some View {
         List(recents, id: \.uuid) { recent in
-            NavigationLink(destination: TimerView(timeRemaining: .constant(60))) {
+            NavigationLink(destination: TimerView(loadByMenu: Binding(get: { recent }, set: { _ in }))) {
                 recentRow(recent: recent)
             }
             .listStyle(.automatic)
@@ -123,6 +123,6 @@ struct TimerListView: View {
 struct TimerListView_Previews: PreviewProvider {
     static var previews: some View {
         TimerListView()
-            .modelContainer(SampleLoadByMenu.previewContainer)
+            .modelContainer(SampleLoadByMenuArray.previewContainer)
     }
 }

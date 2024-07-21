@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct TimerView: View {
-    @Binding var timeRemaining: Double
+    @Binding var loadByMenu: LoadByMenu
     @State private var timer: Timer? = nil
     @State private var isPaused: Bool = false
+    @State private var initialRestTime: Int = 0
     private let CIRCLE_LINE_WIDTH: CGFloat = 5.0
 
     var body: some View {
@@ -19,19 +20,23 @@ struct TimerView: View {
                         .frame(width: 300, height: 300)
 
                     Circle()
-                        .trim(from: 0.0, to: CGFloat(min(self.timeRemaining / 600, 1.0)))
+                        .trim(from: 0.0, to: CGFloat(loadByMenu.rest) / Double(initialRestTime))
                         .stroke(style: StrokeStyle(lineWidth: CIRCLE_LINE_WIDTH, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.orange)
                         .rotationEffect(Angle(degrees: 270.0))
-                        .animation(.linear, value: timeRemaining)
+                        .animation(.linear, value: loadByMenu.rest)
 
                     VStack {
-                        Text(timeString(time: timeRemaining))
+                        Text(timeString(time: Double(loadByMenu.rest)))
                             .font(.system(size: 64, weight: .light, design: .default))
                             .foregroundColor(.white)
-                        Text("4:46 PM")
-                            .font(.system(size: 20, weight: .regular, design: .default))
-                            .foregroundColor(.gray)
+                        HStack {
+                            Image(systemName: "alarm")
+                                .foregroundColor(.gray)
+                            Text("4:46 PM")
+                                .font(.system(size: 20, weight: .regular, design: .default))
+                                .foregroundColor(.gray)
+                        }
                     }
                 }
                 .frame(width: 250, height: 250)
@@ -71,16 +76,17 @@ struct TimerView: View {
                 }
                 .padding()
             }
-        }
-        .onAppear {
-            self.startTimer()
+            .onAppear {
+                self.initialRestTime = self.loadByMenu.rest
+                self.startTimer()
+            }
         }
     }
 
     func startTimer() {
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if self.timeRemaining > 0 {
-                self.timeRemaining -= 1
+            if self.loadByMenu.rest > 0 {
+                self.loadByMenu.rest -= 1
             } else {
                 self.timer?.invalidate()
                 self.timer = nil
@@ -91,7 +97,8 @@ struct TimerView: View {
     func cancelTimer() {
         self.timer?.invalidate()
         self.timer = nil
-        self.timeRemaining = 586
+        self.loadByMenu.rest = self.initialRestTime
+        isPaused.toggle()
     }
 
     func pauseResumeTimer() {
@@ -105,14 +112,21 @@ struct TimerView: View {
     }
 
     func timeString(time: Double) -> String {
-        let minutes = Int(time) / 60
-        let seconds = Int(time) % 60
+        let minutes: Int = Int(time) / 60
+        let seconds: Int = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(
+            loadByMenu: .constant(
+                LoadByMenu.create(
+                    menu: Menu(name: "Bench Press", type: .CHEST),
+                    rest: 60
+                )
+            )
+        )
     }
 }

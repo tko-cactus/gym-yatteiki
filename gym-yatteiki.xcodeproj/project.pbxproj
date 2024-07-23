@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130CDA972C4EB2AF007DCDD4 /* RestTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130CDA962C4EB2AF007DCDD4 /* RestTimer.swift */; };
 		1332F3662C21DFDE0017B00D /* gym_yatteikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */; };
 		1332F3682C21DFDE0017B00D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3672C21DFDE0017B00D /* ContentView.swift */; };
 		1332F36A2C21DFDE0017B00D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332F3692C21DFDE0017B00D /* Item.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130CDA962C4EB2AF007DCDD4 /* RestTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimer.swift; sourceTree = "<group>"; };
 		1332F3622C21DFDE0017B00D /* gym-yatteiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gym-yatteiki.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1332F3652C21DFDE0017B00D /* gym_yatteikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym_yatteikiApp.swift; sourceTree = "<group>"; };
 		1332F3672C21DFDE0017B00D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				133A35FE2C25A4F4003FFFFA /* MenuType.swift */,
 				133A36002C25AED7003FFFFA /* LoadByMenu.swift */,
 				13A57D432C46AF8200FCFC0C /* SampleLoadByMenuArray.swift */,
+				130CDA962C4EB2AF007DCDD4 /* RestTimer.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133A35FF2C25A4F4003FFFFA /* MenuType.swift in Sources */,
+				130CDA972C4EB2AF007DCDD4 /* RestTimer.swift in Sources */,
 				138452652C48055200D7A1FE /* ModelContextExtension.swift in Sources */,
 				136C00832C43F0E400E9E95C /* LoadByMenuModelContainer.swift in Sources */,
 				133A35FB2C259730003FFFFA /* Menu.swift in Sources */,

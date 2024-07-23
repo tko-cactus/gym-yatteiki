@@ -1,5 +1,6 @@
-import SwiftUI
+import Combine
 import SwiftData
+import SwiftUI
 
 struct TimerListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -15,6 +16,7 @@ struct TimerListView: View {
     @State var newMenuType: MenuType = .ARM
     @State var newRestTimeMinutes: Int = 0
     @State var newRestTimeSeconds: Int = 0
+    @State var activeTimerList: [UUID: RestTimer] = [:]
 
     var body: some View {
         NavigationView {
@@ -30,7 +32,7 @@ struct TimerListView: View {
 
     private var recentsList: some View {
         List(recents, id: \.uuid) { recent in
-            NavigationLink(destination: TimerView(loadByMenu: Binding(get: { recent }, set: { _ in }))) {
+            NavigationLink(destination: TimerView(loadByMenu: Binding(get: { recent }, set: { _ in }), timerMap: $activeTimerList)) {
                 recentRow(recent: recent)
             }
             .listStyle(.automatic)
@@ -110,6 +112,9 @@ struct TimerListView: View {
             seconds: newRestTimeSeconds)
         let newLoad = LoadByMenu.create(menu: newMenu, rest: restSeconds)
         modelContext.insert(newLoad)
+        let newTimer = RestTimer(timeRemaining: TimeInterval(restSeconds), isPaused: false)
+        activeTimerList[newLoad.uuid] = newTimer
+
         do {
             try modelContext.save()
             print("Successfully saved new load: \(newLoad)")

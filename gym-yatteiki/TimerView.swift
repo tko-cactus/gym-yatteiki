@@ -2,32 +2,29 @@ import SwiftUI
 
 struct TimerView: View {
     @Binding var loadByMenu: LoadByMenu
-    @State private var timer: Timer? = nil
-    @State private var isPaused: Bool = false
-    @State private var initialRestTime: Int = 0
-    private let CIRCLE_LINE_WIDTH: CGFloat = 5.0
-
+    @Binding var timerMap: [UUID: RestTimer]
+    @State private var currentTimer: RestTimer = RestTimer.getDefaultRestTimer(isPaused: false)
+    
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
-
             VStack {
                 ZStack {
                     Circle()
-                        .stroke(lineWidth: CIRCLE_LINE_WIDTH)
+                        .stroke(lineWidth: 5.0)
                         .opacity(0.3)
                         .foregroundColor(Color.gray)
                         .frame(width: 300, height: 300)
-
+                    
                     Circle()
-                        .trim(from: 0.0, to: CGFloat(loadByMenu.rest) / Double(initialRestTime))
-                        .stroke(style: StrokeStyle(lineWidth: CIRCLE_LINE_WIDTH, lineCap: .round, lineJoin: .round))
+                        .trim(from: 0.0, to: CGFloat(currentTimer.timeRemaining) / CGFloat(currentTimer.initialTimeRemaining))
+                        .stroke(style: StrokeStyle(lineWidth: 5.0, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.orange)
                         .rotationEffect(Angle(degrees: 270.0))
-                        .animation(.linear, value: loadByMenu.rest)
-
+                        .animation(.linear, value: currentTimer.timeRemaining)
+                    
                     VStack {
-                        Text(timeString(time: Double(loadByMenu.rest)))
+                        Text(timeString(time: currentTimer.timeRemaining))
                             .font(.system(size: 64, weight: .light, design: .default))
                             .foregroundColor(.white)
                         HStack {
@@ -40,10 +37,10 @@ struct TimerView: View {
                     }
                 }
                 .frame(width: 250, height: 250)
-
+                
                 HStack(spacing: 40) {
                     Button(action: {
-                        self.cancelTimer()
+                        timerMap[loadByMenu.uuid]?.reset()
                     }) {
                         Text("Cancel")
                             .font(.title2)
@@ -53,80 +50,57 @@ struct TimerView: View {
                             .clipShape(Circle())
                     }
                     Spacer()
-
+                    
                     Button(action: {
-                        self.pauseResumeTimer()
-                    }) {
-                        if isPaused {
-                            Text("Resume")
-                                .font(.title2)
-                                .foregroundColor(.green)
-                                .frame(width: 100, height: 100)
-                                .background(Color.green.opacity(0.3))
-                                .clipShape(Circle())
+                        if currentTimer.isPaused {
+                            currentTimer.start()
                         } else {
-                            Text("Pause")
-                                .font(.title2)
-                                .foregroundColor(.orange)
-                                .frame(width: 100, height: 100)
-                                .background(Color.orange.opacity(0.3))
-                                .clipShape(Circle())
+                            currentTimer.pause()
                         }
+                    }) {
+                        Text(currentTimer.isPaused ? "Resume" : "Pause")
+                            .font(.title2)
+                            .foregroundColor(currentTimer.isPaused ? .green : .orange)
+                            .frame(width: 100, height: 100)
+                            .background(currentTimer.isPaused ? Color.green.opacity(0.3) : Color.orange.opacity(0.3))
+                            .clipShape(Circle())
                     }
                 }
                 .padding()
             }
-            .onAppear {
-                self.initialRestTime = self.loadByMenu.rest
-                self.startTimer()
-            }
+        }
+        .onAppear {
+            currentTimer = timerMap[loadByMenu.uuid] ?? RestTimer.getDefaultRestTimer(isPaused: false)
+            currentTimer.start()
         }
     }
-
-    func startTimer() {
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if self.loadByMenu.rest > 0 {
-                self.loadByMenu.rest -= 1
-            } else {
-                self.timer?.invalidate()
-                self.timer = nil
-            }
-        }
-    }
-
-    func cancelTimer() {
-        self.timer?.invalidate()
-        self.timer = nil
-        self.loadByMenu.rest = self.initialRestTime
-        isPaused.toggle()
-    }
-
-    func pauseResumeTimer() {
-        if isPaused {
-            self.startTimer()
-        } else {
-            self.timer?.invalidate()
-            self.timer = nil
-        }
-        self.isPaused.toggle()
-    }
-
-    func timeString(time: Double) -> String {
-        let minutes: Int = Int(time) / 60
-        let seconds: Int = Int(time) % 60
+    
+    func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60
+        let seconds = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(
-            loadByMenu: .constant(
-                LoadByMenu.create(
-                    menu: Menu(name: "Bench Press", type: .CHEST),
-                    rest: 60
-                )
-            )
+        let sampleMenu = Menu(name: "Bench Press", type: .CHEST)
+        let sampleLoadByMenu = LoadByMenu.create(menu: sampleMenu, rest: 60)
+        let sampleTimer = RestTimer(timeRemaining: 60, isPaused: false)
+        
+        let loadByMenuBinding = Binding<LoadByMenu>(
+            get: { sampleLoadByMenu },
+            set: { _ in }
+        )
+        
+        let timerMapBinding = Binding<[UUID: RestTimer]>(
+            get: { [sampleLoadByMenu.uuid: sampleTimer] },
+            set: { _ in }
+        )
+        
+        return TimerView(
+            loadByMenu: loadByMenuBinding,
+            timerMap: timerMapBinding
         )
     }
 }

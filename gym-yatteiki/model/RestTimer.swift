@@ -3,9 +3,10 @@ import SwiftUI
 
 class RestTimer: ObservableObject {
     @Published var timeRemaining: TimeInterval
+    @Published var initialTimeRemaining: TimeInterval
     @Published var isPaused: Bool
-    private var timer: Timer?
-    let initialTimeRemaining: TimeInterval
+    private var timer: AnyCancellable?
+    private let timerPublisher = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     init(timeRemaining: TimeInterval, isPaused: Bool) {
         self.timeRemaining = timeRemaining
@@ -18,33 +19,37 @@ class RestTimer: ObservableObject {
     }
     
     func start() {
-        if isPaused {
-            isPaused = false
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                self?.updateTimeRemaining()
-            }
+        guard isPaused else { return }
+        isPaused = false
+        timer = timerPublisher.sink { [weak self] _ in
+            self?.updateTimeRemaining()
         }
     }
     
     func pause() {
-        timer?.invalidate()
+        guard !isPaused else { return }
+        timer?.cancel()
         timer = nil
         isPaused = true
     }
     
     func reset() {
-        timer?.invalidate()
-        timer = nil
-        timeRemaining = 0
-        isPaused = true
+        pause()
+        timeRemaining = initialTimeRemaining
     }
     
     private func updateTimeRemaining() {
-        if timeRemaining == 0 {
-            timer?.invalidate()
-            timer = nil
+        guard !isPaused else { return }
+        if timeRemaining > 0 {
+            timeRemaining = max(0, timeRemaining - 0.1)
+        } else {
+            pause()
         }
-        timeRemaining = timeRemaining - 1
-        print("time remaining: \(timeRemaining)")
+    }
+    
+    static func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60
+        let seconds = Int(time) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }

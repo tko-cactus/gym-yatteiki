@@ -48,7 +48,7 @@ struct TimerListView: View {
                 Text(recent.menu.name)
                     .font(.title)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                Text(recent.menu.type.rawValue + " - " + recent.getRestTime())
+                Text(recent.menu.type.rawValue + " - " + RestTimer.timeString(time: activeTimerList[recent.uuid]?.timeRemaining ?? 0))
                     .font(.subheadline)
             }
             Spacer()

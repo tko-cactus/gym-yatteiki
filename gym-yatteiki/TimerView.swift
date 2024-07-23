@@ -3,7 +3,14 @@ import SwiftUI
 struct TimerView: View {
     @Binding var loadByMenu: LoadByMenu
     @Binding var timerMap: [UUID: RestTimer]
-    @State private var currentTimer: RestTimer = RestTimer.getDefaultRestTimer(isPaused: false)
+    @StateObject private var currentTimer: RestTimer
+    
+    init(loadByMenu: Binding<LoadByMenu>, timerMap: Binding<[UUID: RestTimer]>) {
+        self._loadByMenu = loadByMenu
+        self._timerMap = timerMap
+        let timer = timerMap.wrappedValue[loadByMenu.wrappedValue.uuid] ?? RestTimer.getDefaultRestTimer(isPaused: false)
+        self._currentTimer = StateObject(wrappedValue: timer)
+    }
     
     var body: some View {
         ZStack {
@@ -40,7 +47,7 @@ struct TimerView: View {
                 
                 HStack(spacing: 40) {
                     Button(action: {
-                        timerMap[loadByMenu.uuid]?.reset()
+                        currentTimer.reset()
                     }) {
                         Text("Cancel")
                             .font(.title2)
@@ -70,7 +77,6 @@ struct TimerView: View {
             }
         }
         .onAppear {
-            currentTimer = timerMap[loadByMenu.uuid] ?? RestTimer.getDefaultRestTimer(isPaused: false)
             currentTimer.start()
         }
     }

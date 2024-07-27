@@ -24,6 +24,7 @@
     "@storybook/react": "^8.2.6",
     "@storybook/react-vite": "^8.2.6",
     "@storybook/test": "^8.2.6",
+    "@types/node": "^20.14.12",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.40",
     "storybook": "^8.2.6",

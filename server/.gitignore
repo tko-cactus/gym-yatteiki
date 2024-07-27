@@ -1,10 +1,10 @@
 .pnp.*
 .yarn/*
 node_modules/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+.yarn/patches
+.yarn/plugins
+.yarn/releases
+.yarn/sdks
+.yarn/versions
 
 *storybook.log

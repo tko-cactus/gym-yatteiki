@@ -2942,7 +2942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.14.12":
   version: 20.14.12
   resolution: "@types/node@npm:20.14.12"
   dependencies:
@@ -4964,6 +4964,7 @@ __metadata:
     "@storybook/react": "npm:^8.2.6"
     "@storybook/react-vite": "npm:^8.2.6"
     "@storybook/test": "npm:^8.2.6"
+    "@types/node": "npm:^20.14.12"
     autoprefixer: "npm:^10.4.19"
     postcss: "npm:^8.4.40"
     storybook: "npm:^8.2.6"

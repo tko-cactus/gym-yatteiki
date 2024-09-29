@@ -4,9 +4,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            TimerListView()
+            WorkoutListView()
                 .tabItem {
-                    Label("Timer", systemImage: "timer")
+                    Label("Diary", systemImage: "timer")
                 }
             GraphView()
                 .tabItem {

@@ -16,25 +16,15 @@ class LoadByMenu: Codable, Hashable {
     var lep: Int
     /** セット数 */
     var set: Int
-    /** セット間の休憩時間（秒） */
-    var rest: Int
     /** ウェイトの重量（ポンド） */
     var weightPound: Double
 
-    private init(menu: Menu, lep: Int, set: Int, rest: Int, weightPound: Double) {
+    private init(menu: Menu, lep: Int, set: Int, weightPound: Double) {
         self.date = Date.now
         self.menu = menu
         self.lep = lep
         self.set = set
-        self.rest = rest
         self.weightPound = weightPound
-    }
-    
-    /** MM:SS の形式でresttimeを返却する */
-    public func getRestTime() -> String {
-        let minutes = rest / 60
-        let seconds = rest % 60
-        return String(format: "%02d:%02d", minutes, seconds)
     }
     
     /** 分と秒を秒に変換する */
@@ -43,8 +33,8 @@ class LoadByMenu: Codable, Hashable {
     }
     
     /** メニューを指定してインスタンスを作成する */
-    public static func create(menu: Menu, rest: Int) -> LoadByMenu {
-        return LoadByMenu(menu: menu, lep: 0, set: 0, rest: rest, weightPound: 0.0)
+    public static func create(menu: Menu) -> LoadByMenu {
+        return LoadByMenu(menu: menu, lep: 0, set: 0, weightPound: 0.0)
     }
     
     /** ウェイトの重量をキログラムに変換した値を返す */
@@ -63,7 +53,6 @@ class LoadByMenu: Codable, Hashable {
         case menu
         case lep
         case set
-        case rest
         case weightPound
     }
     
@@ -73,7 +62,6 @@ class LoadByMenu: Codable, Hashable {
         menu = try container.decode(Menu.self, forKey: .menu)
         lep = try container.decode(Int.self, forKey: .lep)
         set = try container.decode(Int.self, forKey: .set)
-        rest = try container.decode(Int.self, forKey: .rest)
         weightPound = try container.decode(Double.self, forKey: .weightPound)
     }
     
@@ -83,7 +71,6 @@ class LoadByMenu: Codable, Hashable {
         try container.encode(menu, forKey: .menu)
         try container.encode(lep, forKey: .lep)
         try container.encode(set, forKey: .set)
-        try container.encode(rest, forKey: .rest)
         try container.encode(weightPound, forKey: .weightPound)
     }
     
